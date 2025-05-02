@@ -1,0 +1,48 @@
+﻿@model List<VirtualMachineManagement.WebUl.Models.VirtualMachine>
+
+@{
+    ViewData["Title"] = "Crear VM";
+}
+
+
+<h2>Ver tus VM</h2>
+<div class="d-flex justify-content-end mb-3">
+    <a asp-controller="VirtualMachine" asp-action="Create" class="btn btn-primary">
+        Crear máquina
+    </a>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>CPU</th>
+            <th>RAM</th>
+            <th>Disco</th>
+            <th>OS</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vm in Model)
+        {
+            <tr>
+                <td>@vm.Name</td>
+                <td>@vm.Core</td>
+                <td>@vm.Ram</td>
+                <td>@vm.Disk</td>
+                <td>@vm.Os</td>
+                <td>@(vm.Status ? "Activa" : "Inactiva")</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@vm.Id" class="btn btn-primary btn-sm">Editar</a>
+                    <form asp-action="Delete" asp-route-id="@vm.Id" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar esta máquina virtual?');">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

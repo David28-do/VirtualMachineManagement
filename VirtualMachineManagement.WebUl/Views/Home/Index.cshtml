@@ -1,0 +1,19 @@
+﻿@model VirtualMachineManagement.WebUl.Models.LoginInputModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Index</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label asp-for="@Model.User"></label>
+        <input asp-for="@Model.User" />
+    </div>
+    <div>
+        <label asp-for="@Model.Password"></label>
+        <input asp-for="@Model.Password" type="password" />
+    </div>
+    <button type="submit">Iniciar sesión</button>
+</form>

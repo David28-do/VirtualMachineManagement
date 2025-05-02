@@ -1,0 +1,26 @@
+﻿@model VirtualMachineManagement.WebUl.Models.LoginInputModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<h2>Login</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label asp-for="@Model.User"></label>
+        <input asp-for="@Model.User" />
+        <span asp-validation-for="@Model.User"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.Password"></label>
+        <input asp-for="@Model.Password" type="password" />
+        <span asp-validation-for="@Model.Password"></span>
+    </div>
+    <button type="submit">Iniciar sesión</button>
+</form>
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p>
+}

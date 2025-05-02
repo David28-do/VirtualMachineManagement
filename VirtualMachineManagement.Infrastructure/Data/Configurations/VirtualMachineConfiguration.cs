@@ -8,7 +8,7 @@ namespace VirtualMachineManagement.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<VirtualMachine> builder)
         {
-            builder.ToTable("VIRTUALMACHINE");
+            builder.ToTable("VirtualMachine");
             builder.HasKey(e => e.Id);
 
             builder.Property(e => e.Id)

@@ -7,7 +7,7 @@ using VirtualMachineManagement.Core.Entities;
 using VirtualMachineManagement.Core.Enumerations;
 using VirtualMachineManagement.Core.Interfaces;
 
-namespace SalesVirtualMachines.Api.Controllers
+namespace VirtualMachineManagement.Api.Controllers
 {
     [Authorize(Roles = nameof(RoleType.Administrador))]
     [Produces("application/json")]

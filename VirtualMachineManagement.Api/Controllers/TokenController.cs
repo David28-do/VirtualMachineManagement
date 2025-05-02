@@ -6,7 +6,7 @@ using System.Text;
 using VirtualMachineManagement.Core.Entities;
 using VirtualMachineManagement.Core.Interfaces;
 
-namespace SalesVirtualMachines.Api.Controllers
+namespace VirtualMachineManagement.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

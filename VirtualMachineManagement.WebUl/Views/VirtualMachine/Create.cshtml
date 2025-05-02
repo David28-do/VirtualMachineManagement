@@ -1,0 +1,47 @@
+﻿@model VirtualMachineManagement.WebUl.Models.VirtualMachine
+
+@{
+    ViewData["Title"] = "Crear VM";
+}
+
+
+<h2>Crear tu VM</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div>
+        <label asp-for="@Model.Name"></label>
+        <input asp-for="@Model.Name" />
+        <span asp-validation-for="@Model.Name"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.Core"></label>
+        <input asp-for="@Model.Core"/>
+        <span asp-validation-for="@Model.Core"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.Ram"></label>
+        <input asp-for="@Model.Ram" />
+        <span asp-validation-for="@Model.Ram"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.Disk"></label>
+        <input asp-for="@Model.Disk"/>
+        <span asp-validation-for="@Model.Disk"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.Os"></label>
+        <input asp-for="@Model.Os"/>
+        <span asp-validation-for="@Model.Os"></span>
+    </div>
+    <div>
+        <label asp-for="@Model.Status"></label>
+        <input asp-for="@Model.Status"/>
+        <span asp-validation-for="@Model.Status"></span>
+    </div>
+    <button type="submit">Guardar</button>
+</form>
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p>
+}
