@@ -11,3 +11,7 @@ Desarrollo pureba tecnica para la empresa ifx.corp
 7. Se realiza creación de excepciones personalizadas BusinessException.
 8. Se crea un proyecto web "VirtualMachineManagement.WebUl" el cual realiza el llamado a la api para obtener el token por medio de JWT y ese token es enviado al proyecto api para cada metodo get, post, put y delete.
 9. Se implementa autenticacion con jwt el cual recibe un usario una contraseña y un rol especifico (Administrado o Developer)
+10. Se crea la tabla VirtualMachine a cual va tener la informacion de las VM.
+11. Se crea la tabla Usuario a cual va tener el usuario y contraseña.
+11. Se crea la tabla Seguridad a cual va tener el usuario y contraseña y el rol que va a tener para realizar las peticiones.
+12.  Se creo un controlador SecurityController para crear registros en la tabla Seguridad y asi crear los nuevos usuarios con su rol respectivo.
